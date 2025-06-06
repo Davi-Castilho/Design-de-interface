@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nome da Empresa - Soluções Inovadoras</title>
+    <style>
+        /* === ESTILOS GERAIS === */
+        :root {
+            --cor-primaria: #0056b3; /* Azul escuro */
+            --cor-secundaria: #007bff; /* Azul claro */
+            --cor-fundo: #f4f4f4;
+            --cor-texto: #333;
+            --cor-branco: #ffffff;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.6;
+            scroll-behavior: smooth; /* Para rolagem suave ao clicar nos links do menu */
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3 {
+            color: var(--cor-primaria);
+        }
+
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        /* === CABEÇALHO E NAVEGAÇÃO === */
+        .cabecalho {
+            background-color: var(--cor-branco);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--cor-primaria);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 25px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--cor-texto);
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--cor-secundaria);
+        }
+
+        /* === SEÇÃO INÍCIO (HERO) === */
+        #inicio {
+            background: linear-gradient(rgba(0, 86, 179, 0.7), rgba(0, 123, 255, 0.7)), url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+            color: var(--cor-branco);
+            text-align: center;
+            padding: 180px 0 120px 0;
+            margin-top: 70px; /* Espaço para o cabeçalho fixo */
+        }
+
+        #inicio h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--cor-branco);
+        }
+
+        #inicio p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--cor-branco);
+            color: var(--cor-primaria);
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--cor-secundaria);
+            color: var(--cor-branco);
+        }
+        
+        /* === SEÇÃO SOBRE === */
+        #sobre .container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        #sobre img {
+            max-width: 400px;
+            border-radius: 10px;
+        }
+
+        /* === SEÇÃO SERVIÇOS === */
+        #servicos {
+            text-align: center;
+        }
+
+        .servicos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .servico-item {
+            background-color: var(--cor-branco);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+            text-align: left;
+            transition: transform 0.3s ease;
+        }
+        
+        .servico-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .servico-item h3 {
+            margin-top: 0;
+        }
+
+        /* === SEÇÃO CONTATO === */
+        .contato-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--cor-branco);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+        }
+        
+        .contato-form h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            background-color: var(--cor-primaria);
+            color: var(--cor-branco);
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .submit-button:hover {
+            background-color: var(--cor-secundaria);
+        }
+
+        /* === RODAPÉ === */
+        .rodape {
+            background-color: var(--cor-primaria);
+            color: var(--cor-branco);
+            text-align: center;
+            padding: 20px 0;
+        }
+        
+        .rodape p {
+            margin: 0;
+        }
+
+        /* === AJUSTES PARA CELULARES (RESPONSIVIDADE) === */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .nav-menu {
+                flex-direction: column;
+                width: 100%;
+                margin-top: 1rem;
+            }
+
+            .nav-menu li {
+                margin: 10px 0;
+            }
+
+            #inicio {
+                margin-top: 130px; /* Ajuste para o cabeçalho maior em mobile */
+            }
+
+            #inicio h1 {
+                font-size: 2.2rem;
+            }
+            
+            #sobre .container {
+                flex-direction: column;
+            }
+            
+            #sobre img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="cabecalho">
+        <div class="container navbar">
+            <a href="#inicio" class="logo">Nome da Empresa</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#sobre">Sobre Nós</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="inicio">
+            <div class="container">
+                <h1>Inovação e Tecnologia para o seu Sucesso</h1>
+                <p>Oferecemos as melhores soluções para alavancar o seu negócio no mundo digital.</p>
+                <a href="#servicos" class="cta-button">Conheça Nossos Serviços</a>
+            </div>
+        </section>
+
+        <section id="sobre">
+            <div class="container">
+                <img src="https://via.placeholder.com/400x300" alt="Equipe da empresa trabalhando">
+                <div>
+                    <h2>Sobre Nós</h2>
+                    <p>Somos uma empresa apaixonada por tecnologia e resultados. Nossa missão é transformar ideias em realidade, utilizando as ferramentas mais modernas e uma equipe altamente qualificada para atender às necessidades específicas de cada cliente.</p>
+                    <p>Fundada em 2020, nossa trajetória é marcada pela inovação constante e pelo compromisso com a excelência, construindo parcerias de sucesso e entregando valor em cada projeto.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="servicos">
+            <div class="container">
+                <h2>Nossos Serviços</h2>
+                <div class="servicos-grid">
+                    <article class="servico-item">
+                        <h3>Consultoria Estratégica</h3>
+                        <p>Analisamos seu negócio e o mercado para criar um plano de ação digital eficiente e focado em resultados.</p>
+                    </article>
+                    <article class="servico-item">
+                        <h3>Desenvolvimento de Software</h3>
+                        <p>Criamos sistemas e aplicativos sob medida, robustos e escaláveis para otimizar seus processos.</p>
+                    </article>
+                    <article class="servico-item">
+                        <h3>Marketing Digital</h3>
+                        <p>Gerenciamos campanhas de marketing, SEO e redes sociais para aumentar sua visibilidade e atrair mais clientes.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="contato">
+            <div class="container">
+                <form class="contato-form">
+                    <h2>Entre em Contato</h2>
+                    <div class="form-group">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <p>&copy; 2025 Nome da Empresa. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
